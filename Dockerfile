@@ -6,7 +6,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 RUN sed -i 's/\r$//' mvnw
-RUN ./mvnw -Dspring-javaformat.lineSeparator=crlf clean install
+RUN chmod +x ./mvnw && ./mvnw -Dspring-javaformat.lineSeparator=crlf clean install
 
 #Package Stage
 FROM openjdk:17
